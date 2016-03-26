@@ -90,10 +90,8 @@ function runGame() {
         let j = 0
         score++
         document.getElementById('score').innerHTML = score
-        while (i-j > 0) {
-          gameboard[i-j] = gameboard[i-j-1]
-          j++
-        }
+        gameboard.splice(i,1);
+        gameboard.unshift([false,false,false,false,false,false,false,false,false,false]);
         refresh()
       }
     };
